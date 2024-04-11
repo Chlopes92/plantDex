@@ -1,6 +1,9 @@
+CREATE DATABASE plantDex;
+
 -- requête création des tables
 
 DROP TABLE IF EXISTS plant CASCADE;
+DROP TABLE IF EXISTS "user" cascade;
 
 CREATE TABLE plant(
 	id SERIAL PRIMARY KEY NOT NULL,
@@ -9,4 +12,10 @@ CREATE TABLE plant(
     arrosage INTEGER NOT NULL,
     categorie VARCHAR(150)NOT NULL,
     image TEXT
+);
+
+CREATE TABLE "user"(
+	id SERIAL PRIMARY KEY NOT NULL,
+	email VARCHAR(250) UNIQUE NOT NULL,
+    password VARCHAR(250) NOT NULL
 );
